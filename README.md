@@ -19,8 +19,6 @@ npm install
 npm run dev
 ```
 
-Открой URL, который Vite выведет в терминале, обычно `http://localhost:5173/`.
-
 Production-сборка:
 
 ```bash
@@ -35,7 +33,7 @@ Frontend обращается к API по адресу:
 https://api.vitaliy-armss.ru/task-manager/api
 ```
 
-Если адрес API нужно изменить, проверь клиентский API-модуль в `src/` и согласуй путь с конфигурацией Nginx и backend.
+Если адрес API нужно изменить, проверьте клиентский API-модуль в `src/` и согласуйте путь с конфигурацией Nginx и backend.
 
 ## Публикация
 
@@ -47,4 +45,4 @@ https://api.vitaliy-armss.ru/task-manager/api
 
 ## Примечание по безопасности
 
-Не помещай секретные ключи, пароли PostgreSQL или другие backend-секреты во frontend: код и production-сборка доступны посетителям сайта.
+Не помещайте секретные ключи, пароли PostgreSQL или другие backend-секреты во frontend: код и production-сборка доступны посетителям сайта.
