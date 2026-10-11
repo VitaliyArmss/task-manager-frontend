@@ -1,17 +1,50 @@
 # Task Manager Frontend
 
-React + Vite frontend for GitHub Pages. The API URL is intentionally hard-coded in `src/api.js`; there are no `.env` files in this project.
+React-клиент приложения Task Manager. Предоставляет пользовательский интерфейс для входа и работы с задачами, отправляя запросы в ASP.NET Core backend.
 
-## Production endpoints
+**[Открыть демо](https://vitaliyarmss.github.io/task-manager-frontend/)** · **[Backend](https://github.com/VitaliyArmss/task-manager-backend)** · **[Главный репозиторий](https://github.com/VitaliyArmss/task-manager-project)**
 
-- GitHub repository: `VitaliyArmss/task-manager-frontend`
-- GitHub Pages URL: `https://vitaliyarmss.github.io/task-manager-frontend/`
-- API URL: `https://api.vitaliy-armss.ru/task-manager/api`
+## Технологии
 
-## Publish
+- React
+- JavaScript
+- Vite
 
-1. Upload the contents of this folder to the GitHub repository `task-manager-frontend`, including the hidden `.github/workflows/deploy.yml` file.
-2. In GitHub repository settings, open **Settings → Pages** and choose **GitHub Actions** as the source.
-3. Push/upload the files to branch `main`. The workflow installs packages, builds Vite, and publishes `dist/`.
+## Локальный запуск
 
-For local development run `npm install`, then `npm run dev`.
+Требуются Node.js и npm.
+
+```bash
+npm install
+npm run dev
+```
+
+Открой URL, который Vite выведет в терминале, обычно `http://localhost:5173/`.
+
+Production-сборка:
+
+```bash
+npm run build
+```
+
+## Backend API
+
+Frontend обращается к API по адресу:
+
+```text
+https://api.vitaliy-armss.ru/task-manager/api
+```
+
+Если адрес API нужно изменить, проверь клиентский API-модуль в `src/` и согласуй путь с конфигурацией Nginx и backend.
+
+## Публикация
+
+Приложение опубликовано через GitHub Pages:
+
+**https://vitaliyarmss.github.io/task-manager-frontend/**
+
+Для Vite настроен base path `/task-manager-frontend/` при production-сборке. При локальном запуске используется корневой путь `/`.
+
+## Примечание по безопасности
+
+Не помещай секретные ключи, пароли PostgreSQL или другие backend-секреты во frontend: код и production-сборка доступны посетителям сайта.
